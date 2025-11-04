@@ -1,11 +1,17 @@
 migrate:
 	docker-compose run --rm app npm run migrate
 
+seed:
+	docker-compose run --rm app npm run seed
+
+setup:
+	docker-compose run --rm app npm run setup
+
 up:
-	docker-compose up
+	docker-compose up --build
 
 down:
-	docker-compose down -v
+	docker-compose down
 
-test:
-	docker-compose run --rm app npm test
+logs:
+	docker-compose logs -f

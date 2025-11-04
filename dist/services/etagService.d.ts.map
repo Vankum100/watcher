@@ -1,0 +1,1 @@
+{"version":3,"file":"etagService.d.ts","sourceRoot":"","sources":["../../src/services/etagService.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,iBAAiB,EAAE,MAAM,oBAAoB,CAAC;AAEvD,qBAAa,WAAW;IACtB,MAAM,CAAC,YAAY,CAAC,IAAI,EAAE,iBAAiB,GAAG,MAAM;IAMpD,OAAO,CAAC,MAAM,CAAC,gBAAgB;IAY/B,OAAO,CAAC,MAAM,CAAC,kBAAkB;IAMjC,OAAO,CAAC,MAAM,CAAC,cAAc;CAM9B"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"watcherLinkRepository.d.ts","sourceRoot":"","sources":["../../src/repositories/watcherLinkRepository.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,IAAI,CAAC;AAC1B,OAAO,EAAE,WAAW,EAAE,MAAM,oBAAoB,CAAC;AAGjD,qBAAa,qBAAqB;IACpB,OAAO,CAAC,IAAI;gBAAJ,IAAI,EAAE,IAAI;IAExB,WAAW,CAAC,KAAK,EAAE,MAAM,GAAG,OAAO,CAAC,WAAW,GAAG,IAAI,CAAC;CAkB9D"}

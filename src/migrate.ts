@@ -1,9 +1,9 @@
 import { Client } from 'pg';
-import { readFileSync } from 'fs';
+import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 
 const client = new Client({
-  connectionString: process.env.DATABASE_URL || 'postgres://postgres:password@localhost:5432/watcher'
+  connectionString: process.env.DATABASE_URL || 'postgres://postgres:password@postgres:5432/watcher'
 });
 
 async function runMigrations() {
@@ -11,10 +11,21 @@ async function runMigrations() {
     await client.connect();
     console.log('Running migrations...');
 
-    const migration = readFileSync(join(process.cwd(), 'migrations', '001_initial_schema.sql'), 'utf8');
-    await client.query(migration);
+    const migrationsDir = join(process.cwd(), 'migrations');
+    const files = readdirSync(migrationsDir)
+      .filter(file => file.endsWith('.sql'))
+      .sort();
 
-    console.log('Migrations completed successfully');
+    console.log(`Found ${files.length} migration files:`, files);
+
+    for (const file of files) {
+      console.log(`Executing migration: ${file}`);
+      const migration = readFileSync(join(migrationsDir, file), 'utf8');
+      await client.query(migration);
+      console.log(`✓ ${file} completed`);
+    }
+
+    console.log('All migrations completed successfully');
   } catch (error) {
     console.error('Migration failed:', error);
     process.exit(1);
