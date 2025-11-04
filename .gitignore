@@ -1,4 +1,3 @@
-node_modules
 build
 
 .git
@@ -7,3 +6,6 @@ build
 .idea
 .aider*
 .DS_Store
+dist/
+*.log
+node_modules/
