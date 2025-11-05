@@ -34,7 +34,7 @@ export class WorkerRepository {
       name: worker.name,
       status: worker.status,
       last_seen_at: worker.last_seen_at.toISOString(),
-      hashrate_th: (Number(worker.hashrate_mh) / 1000000).toFixed(3)
+      hashrate_th: (Number(worker.hashrate_mh) / 1000).toFixed(3)
     }));
 
     return {
@@ -43,7 +43,7 @@ export class WorkerRepository {
         online: agg.online,
         offline: agg.offline,
         inactive: agg.inactive,
-        total_hashrate_th: (agg.totalHashrate / 1000000).toFixed(3)
+        total_hashrate_th: (agg.totalHashrate / 1000).toFixed(3)
       }
     };
   }

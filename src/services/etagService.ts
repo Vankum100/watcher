@@ -22,8 +22,8 @@ export class ETagService {
 
   private static normalizeTimestamp(timestamp: string): string {
     const date = new Date(timestamp);
-    date.setSeconds(0, 0);
-    return date.toISOString();
+    const roundedMinutes = Math.floor(date.getTime() / 60000) * 60000;
+    return String(roundedMinutes);
   }
 
   private static sortObjectKeys(obj: Record<string, any>): Record<string, any> {
